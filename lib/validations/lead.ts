@@ -5,7 +5,7 @@ export const leadSchema = z.object({
   empresa: z.string().min(2, "Informe a empresa").max(120),
   cargo: z.enum(
     ["engenharia", "manutencao", "compras", "diretoria", "outros"],
-    { errorMap: () => ({ message: "Selecione seu cargo" }) },
+    { message: "Selecione seu cargo" },
   ),
   email: z
     .string()
@@ -27,7 +27,7 @@ export const leadSchema = z.object({
       "condominios-industriais",
       "outros",
     ],
-    { errorMap: () => ({ message: "Selecione um segmento" }) },
+    { message: "Selecione um segmento" },
   ),
   servico: z.enum(
     [
@@ -38,17 +38,17 @@ export const leadSchema = z.object({
       "consultoria",
       "ainda-avaliando",
     ],
-    { errorMap: () => ({ message: "Selecione o tipo de demanda" }) },
+    { message: "Selecione o tipo de demanda" },
   ),
   prazo: z.enum(["urgente", "30-90-dias", "90-dias-mais", "pesquisando"], {
-    errorMap: () => ({ message: "Informe o prazo" }),
+    message: "Informe o prazo",
   }),
   mensagem: z
     .string()
     .min(20, "Descreva sua necessidade com pelo menos 20 caracteres")
     .max(2000, "Mensagem muito longa"),
   consent: z.literal(true, {
-    errorMap: () => ({ message: "É necessário aceitar para envio" }),
+    message: "É necessário aceitar para envio",
   }),
   // Honeypot — campo deve ficar vazio
   website: z.string().max(0).optional(),
