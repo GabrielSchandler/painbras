@@ -1,0 +1,176 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* ===== Editorial Engineering Palette ===== */
+    /* Background — off-white quente, papel editorial */
+    --background: 48 25% 97%;
+    --surface: 0 0% 100%;
+    --surface-elevated: 48 16% 95%;
+    --surface-inverted: 220 14% 7%;
+
+    /* Foreground — quase preto quente, mais legível que #000 */
+    --foreground: 220 14% 7%;
+    --muted: 48 12% 92%;
+    --muted-foreground: 220 6% 36%;
+
+    /* Acento — azul aço industrial profundo */
+    --accent: 211 49% 24%;
+    --accent-hover: 211 52% 18%;
+    --accent-foreground: 0 0% 100%;
+    --accent-subtle: 211 35% 94%;
+
+    /* Estrutura */
+    --border: 48 8% 88%;
+    --border-strong: 220 14% 12%;
+    --input: 48 8% 88%;
+    --ring: 211 49% 24%;
+
+    /* Estado */
+    --destructive: 0 72% 42%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 142 60% 30%;
+    --success-foreground: 0 0% 100%;
+  }
+
+  .dark {
+    --background: 220 14% 5%;
+    --surface: 220 12% 8%;
+    --surface-elevated: 220 10% 12%;
+    --surface-inverted: 48 25% 97%;
+
+    --foreground: 48 25% 96%;
+    --muted: 220 8% 14%;
+    --muted-foreground: 220 6% 64%;
+
+    --accent: 211 70% 60%;
+    --accent-hover: 211 75% 70%;
+    --accent-foreground: 220 14% 7%;
+    --accent-subtle: 211 30% 18%;
+
+    --border: 220 8% 16%;
+    --border-strong: 48 25% 96%;
+    --input: 220 8% 16%;
+    --ring: 211 70% 60%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv11";
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-variant-numeric: tabular-nums;
+  }
+
+  ::selection {
+    @apply bg-accent text-accent-foreground;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+  }
+
+  /* Numbers (tabular para specs técnicas) */
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Tipografia display — headlines grandes */
+  .text-display {
+    @apply font-display tracking-tight;
+    font-feature-settings: "ss01", "ss02";
+  }
+}
+
+@layer components {
+  /* Container editorial com max-width customizada */
+  .container-editorial {
+    @apply mx-auto w-full max-w-[1320px] px-6 sm:px-8 lg:px-12;
+  }
+
+  /* Seção padrão — padding vertical generoso */
+  .section-pad {
+    @apply py-20 md:py-28 lg:py-32;
+  }
+
+  .section-pad-lg {
+    @apply py-24 md:py-32 lg:py-40;
+  }
+
+  /* Eyebrow / kicker — texto acima de títulos */
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground;
+  }
+
+  .eyebrow::before {
+    content: "";
+    @apply h-px w-8 bg-border-strong;
+  }
+
+  /* Divider editorial — linha estrutural fina */
+  .divider-editorial {
+    @apply h-px w-full bg-border;
+  }
+
+  /* Grain texture — adiciona ruído sutil ao fundo */
+  .grain {
+    position: relative;
+  }
+  .grain::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.5;
+    mix-blend-mode: multiply;
+  }
+
+  /* Imagem em P&B editorial */
+  .img-editorial {
+    filter: grayscale(100%) contrast(1.05) brightness(0.98);
+    transition: filter 600ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .img-editorial:hover {
+    filter: grayscale(40%) contrast(1.02) brightness(1);
+  }
+}
+
+@layer utilities {
+  /* Mask para fade de bordas (carrosséis, logos) */
+  .mask-fade-x {
+    mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  }
+
+  /* Text balance para headlines */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+}
+
+/* Reduce motion respeitado globalmente */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
