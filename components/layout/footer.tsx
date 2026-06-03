@@ -1,5 +1,4 @@
 import { Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/ui/container";
 import { COMPANY, NAV } from "@/lib/constants";
@@ -135,16 +134,9 @@ export function Footer() {
 
         {/* Bottom */}
         <div className="flex flex-col items-start justify-between gap-6 border-t border-background/10 pt-10 text-xs text-background/50 md:flex-row md:items-center">
-          <div className="flex items-center gap-3">
-            <Image
-              src="/brand/logo-icon.svg"
-              alt=""
-              width={28}
-              height={28}
-              className="h-7 w-7"
-            />
+          <div className="flex items-baseline gap-3">
             <span className="font-display text-base font-semibold tracking-tight text-background">
-              Pain<span className="text-background">Bras</span>
+              Pain<span className="text-accent">Bras</span>
             </span>
             <span className="hidden md:inline">© {getYear()} {COMPANY.legalName}. Todos os direitos reservados.</span>
           </div>

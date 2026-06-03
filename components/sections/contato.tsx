@@ -1,5 +1,5 @@
 import { ArrowUpRight, Clock, Mail, MapPin, Phone } from "lucide-react";
-import { LeadForm } from "@/components/forms/lead-form";
+import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/primitives/reveal";
 import { SectionHeading } from "@/components/primitives/section-heading";
@@ -23,57 +23,62 @@ export function Contato() {
               as="h2"
               title={
                 <>
-                  Conte qual é<br />
-                  <span className="text-muted-foreground">a operação.</span>
+                  Fale com a gente<br />
+                  <span className="text-muted-foreground">pelo WhatsApp.</span>
                 </>
               }
             />
           </Reveal>
           <Reveal delay={0.15}>
             <p className="max-w-md text-base leading-relaxed text-muted-foreground md:text-lg md:leading-relaxed lg:justify-self-end">
-              Nossa equipe técnica responde em até 4h úteis com próximas etapas. Quanto
-              mais técnico você for no formulário, mais preciso é o retorno.
+              Conte qual é a operação e respondemos em até 4h úteis com próximas
+              etapas. Atendimento direto pelo nosso WhatsApp comercial.
             </p>
           </Reveal>
         </div>
 
-        <div className="grid gap-px bg-border lg:grid-cols-[1.6fr_1fr]">
-          {/* Form */}
-          <div className="bg-background p-8 md:p-12 lg:p-16">
-            <Reveal>
-              <LeadForm />
-            </Reveal>
-          </div>
-
-          {/* Side info */}
-          <aside className="space-y-12 bg-surface-elevated p-8 md:p-12 lg:p-14">
-            <Reveal delay={0.1}>
+        <div className="grid gap-px bg-border lg:grid-cols-[1.4fr_1fr]">
+          {/* Bloco principal — WhatsApp CTA */}
+          <Reveal>
+            <div className="relative flex h-full flex-col justify-between gap-12 bg-surface-elevated p-8 md:p-12 lg:p-16">
               <div>
                 <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-muted-foreground">
-                  Atendimento direto
+                  Canal direto
                 </p>
-                <a
-                  href={whatsappLink(COMPANY.contact.whatsapp, WHATSAPP_DEFAULT_MESSAGE)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group mt-4 inline-flex items-center gap-3 font-display text-2xl font-medium tracking-tight text-foreground"
-                >
-                  {COMPANY.contact.whatsappDisplay}
-                  <span
-                    aria-hidden
-                    className="inline-flex h-9 w-9 items-center justify-center border border-border-strong transition-all duration-500 ease-out-expo group-hover:bg-foreground group-hover:text-background"
-                  >
-                    <ArrowUpRight className="h-4 w-4" />
+                <h3 className="mt-6 font-display text-4xl font-medium leading-[1.05] tracking-tight text-foreground md:text-5xl lg:text-6xl">
+                  WhatsApp<br />
+                  <span className="font-mono tabular text-2xl text-muted-foreground md:text-3xl">
+                    {COMPANY.contact.whatsappDisplay}
                   </span>
-                </a>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  WhatsApp atendido diretamente pelo responsável técnico.
+                </h3>
+                <p className="mt-6 max-w-md text-base leading-relaxed text-muted-foreground md:text-lg">
+                  Atendimento direto pelo responsável técnico. Quanto mais
+                  detalhes da operação você enviar, mais preciso é o retorno.
                 </p>
               </div>
-            </Reveal>
 
-            <Reveal delay={0.2}>
-              <ul className="space-y-6 border-t border-border pt-10">
+              <div className="space-y-4">
+                <Button asChild variant="primary" size="xl" className="w-full sm:w-auto">
+                  <a
+                    href={whatsappLink(COMPANY.contact.whatsapp, WHATSAPP_DEFAULT_MESSAGE)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Iniciar conversa no WhatsApp
+                    <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
+                  </a>
+                </Button>
+                <p className="text-xs text-muted-foreground">
+                  Resposta técnica em até <strong className="text-foreground">4h úteis</strong>.
+                </p>
+              </div>
+            </div>
+          </Reveal>
+
+          {/* Side info */}
+          <aside className="space-y-10 bg-surface-elevated p-8 md:p-12 lg:p-14">
+            <Reveal delay={0.1}>
+              <ul className="space-y-7">
                 <ContactRow
                   icon={Phone}
                   label="Telefone"
@@ -114,17 +119,6 @@ export function Contato() {
                   }
                 />
               </ul>
-            </Reveal>
-
-            <Reveal delay={0.3}>
-              <div className="border-t border-border pt-10">
-                <p className="font-mono tabular text-xs uppercase tracking-[0.22em] text-muted-foreground">
-                  SLA
-                </p>
-                <p className="mt-4 font-display text-2xl font-medium leading-tight tracking-tight text-foreground">
-                  Resposta técnica em <span className="text-accent">4h úteis</span>.
-                </p>
-              </div>
             </Reveal>
           </aside>
         </div>

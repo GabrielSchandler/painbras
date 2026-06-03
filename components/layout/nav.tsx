@@ -2,7 +2,6 @@
 
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { ArrowUpRight, Menu, X } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -100,21 +99,11 @@ export function Nav() {
 
 function Logo() {
   return (
-    <span className="flex items-center gap-2.5">
-      <Image
-        src="/brand/logo-icon.svg"
-        alt=""
-        width={36}
-        height={36}
-        priority
-        className="h-9 w-9"
-      />
-      <span
-        aria-hidden
-        className="flex items-baseline font-display text-xl font-semibold tracking-tight text-foreground sm:text-2xl"
-      >
-        Pain<span className="text-foreground">Bras</span>
-      </span>
+    <span
+      aria-hidden
+      className="flex items-baseline font-display text-2xl font-semibold tracking-tight text-foreground"
+    >
+      Pain<span className="ml-0.5 text-accent">Bras</span>
     </span>
   );
 }

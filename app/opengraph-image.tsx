@@ -26,41 +26,15 @@ export default async function OG() {
           style={{
             display: "flex",
             alignItems: "center",
-            gap: 16,
+            gap: 12,
+            fontSize: 22,
+            letterSpacing: 4,
+            textTransform: "uppercase",
+            color: "#5B5B5F",
           }}
         >
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              width: 68,
-              height: 68,
-              borderRadius: "50%",
-              background: "#F4B400",
-              border: "4px solid #0A0A0A",
-              fontSize: 40,
-              fontWeight: 800,
-              color: "#0A0A0A",
-              lineHeight: 1,
-            }}
-          >
-            B
-          </div>
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: 12,
-              fontSize: 18,
-              letterSpacing: 4,
-              textTransform: "uppercase",
-              color: "#5B5B5F",
-            }}
-          >
-            <div style={{ width: 36, height: 1, background: "#0F0F10" }} />
-            Painéis elétricos industriais
-          </div>
+          <div style={{ width: 48, height: 1, background: "#0F0F10" }} />
+          Painéis elétricos industriais
         </div>
 
         <div>
