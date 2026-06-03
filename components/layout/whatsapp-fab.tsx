@@ -41,7 +41,7 @@ export function WhatsappFab() {
           </svg>
         </span>
         <span className="hidden text-sm font-medium md:inline">
-          Falar com engenheiro
+          Falar no WhatsApp
         </span>
       </a>
     </motion.div>

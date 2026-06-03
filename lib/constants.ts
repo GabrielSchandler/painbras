@@ -1,6 +1,6 @@
 /**
  * Dados institucionais centralizados.
- * Placeholders {{ }} devem ser substituídos antes do deploy.
+ * Placeholders {{ }} são detectados em render para esconder dados não fornecidos.
  */
 export const COMPANY = {
   legalName: "Pain Bras Painéis Elétricos Industriais",
@@ -12,7 +12,7 @@ export const COMPANY = {
   yearsInMarket: "{{ANOS_DE_MERCADO}}", // ex: "+15"
   panelsPerYear: "{{PAINEIS_ANO}}", // ex: "+500"
   activeClients: "{{CLIENTES_ATIVOS}}", // ex: "+120"
-  industriesServed: "+30", // baseado nos segmentos
+  industriesServed: "{{INDUSTRIAS_ATENDIDAS}}",
   cnpj: "{{CNPJ}}",
   ie: "{{IE}}",
 

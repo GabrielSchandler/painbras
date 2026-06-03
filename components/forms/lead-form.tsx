@@ -77,7 +77,7 @@ export function LeadForm() {
               Recebemos sua solicitação.
             </h3>
             <p className="mt-4 text-base leading-relaxed text-muted-foreground md:text-lg">
-              Um engenheiro responsável retorna em até <strong>4h úteis</strong> com
+              Nosso responsável técnico retorna em até <strong>4h úteis</strong> com
               próximas etapas. Se for urgente, fale agora pelo WhatsApp.
             </p>
             <Button

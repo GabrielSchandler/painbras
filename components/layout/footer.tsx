@@ -1,8 +1,12 @@
 import { Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/ui/container";
 import { COMPANY, NAV } from "@/lib/constants";
 import { getYear } from "@/lib/utils";
+
+const hasLinkedin = !COMPANY.social.linkedin.includes("{{");
+const hasCnpj = !COMPANY.cnpj.includes("{{");
 
 const colServicos = [
   { label: "Painéis de comando", href: "/solucoes/paineis-de-comando" },
@@ -26,11 +30,11 @@ export function Footer() {
         <div className="grid gap-12 border-b border-background/10 pb-16 lg:grid-cols-[1.4fr_1fr] lg:gap-24 lg:pb-20">
           <div>
             <p className="font-display text-3xl font-medium leading-[1.15] tracking-tight text-balance md:text-5xl">
-              Projetos elétricos que sua planta não pode pagar para errar.
+              Painéis elétricos que sua planta não pode pagar para errar.
             </p>
             <p className="mt-6 max-w-xl text-base leading-relaxed text-background/70 md:text-lg">
-              Conte qual é o seu desafio. Um engenheiro responde em até 4h úteis com
-              próximas etapas claras.
+              Conte qual é o seu desafio. Nosso time técnico responde em até 4h úteis
+              com próximas etapas claras.
             </p>
           </div>
 
@@ -114,33 +118,45 @@ export function Footer() {
               >
                 <Instagram className="h-4 w-4" />
               </a>
-              <a
-                href={COMPANY.social.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn Pain Bras"
-                className="inline-flex h-10 w-10 items-center justify-center border border-background/20 text-background/70 transition-colors hover:border-accent hover:text-accent"
-              >
-                <Linkedin className="h-4 w-4" />
-              </a>
+              {hasLinkedin && (
+                <a
+                  href={COMPANY.social.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn Pain Bras"
+                  className="inline-flex h-10 w-10 items-center justify-center border border-background/20 text-background/70 transition-colors hover:border-accent hover:text-accent"
+                >
+                  <Linkedin className="h-4 w-4" />
+                </a>
+              )}
             </div>
           </div>
         </div>
 
         {/* Bottom */}
         <div className="flex flex-col items-start justify-between gap-6 border-t border-background/10 pt-10 text-xs text-background/50 md:flex-row md:items-center">
-          <div className="flex items-baseline gap-2">
+          <div className="flex items-center gap-3">
+            <Image
+              src="/brand/logo-icon.svg"
+              alt=""
+              width={28}
+              height={28}
+              className="h-7 w-7"
+            />
             <span className="font-display text-base font-semibold tracking-tight text-background">
-              Pain<span className="text-accent">Bras</span>
+              Pain<span className="text-background">Bras</span>
             </span>
-            <span>© {getYear()} {COMPANY.legalName}. Todos os direitos reservados.</span>
+            <span className="hidden md:inline">© {getYear()} {COMPANY.legalName}. Todos os direitos reservados.</span>
           </div>
-          <div className="flex items-center gap-6">
-            <span className="font-mono tabular text-background/40">
-              CNPJ {COMPANY.cnpj}
-            </span>
-          </div>
+          {hasCnpj && (
+            <div className="flex items-center gap-6">
+              <span className="font-mono tabular text-background/40">
+                CNPJ {COMPANY.cnpj}
+              </span>
+            </div>
+          )}
         </div>
+        <p className="mt-4 text-xs text-background/40 md:hidden">© {getYear()} {COMPANY.legalName}.</p>
       </Container>
     </footer>
   );

@@ -12,10 +12,7 @@ import { whatsappLink } from "@/lib/utils";
 
 const headline = ["Painéis", "elétricos", "para indústrias", "que não", "podem parar."];
 
-const eyebrow = "Painéis elétricos industriais — desde {{ANO_FUNDACAO}}".replace(
-  "{{ANO_FUNDACAO}}",
-  COMPANY.foundedYear,
-);
+const eyebrow = "Painéis elétricos industriais — São Paulo / SP";
 
 export function Hero() {
   const ref = useRef<HTMLElement>(null);
@@ -81,7 +78,7 @@ export function Hero() {
             >
               Projeto, montagem e comissionamento de painéis elétricos sob medida
               para plásticos, borracha, irrigação e infraestrutura crítica. Execução
-              documentada, componentes WEG, Siemens e Schneider, prazo honesto.
+              documentada, componentes WEG e fabricantes consolidados, prazo honesto.
             </motion.p>
 
             {/* CTAs */}
@@ -109,16 +106,16 @@ export function Hero() {
               </Button>
             </motion.div>
 
-            {/* Stats inline */}
+            {/* Provas concretas */}
             <motion.dl
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 1.25 }}
               className="mt-16 grid max-w-xl grid-cols-3 gap-6 border-t border-border pt-8"
             >
-              <Stat label="Anos de operação" value={COMPANY.yearsInMarket} />
-              <Stat label="Painéis entregues" value={COMPANY.panelsPerYear} suffix="/ ano" />
-              <Stat label="Indústrias atendidas" value={COMPANY.industriesServed} />
+              <Stat label="Resposta técnica" value="4h" suffix="úteis" />
+              <Stat label="Conformidade" value="NR-10" suffix="documentada" />
+              <Stat label="Ensaio" value="100%" suffix="em bancada" />
             </motion.dl>
           </motion.div>
 
@@ -200,7 +197,7 @@ function HeroVisual() {
 
       {/* Tag superior */}
       <div className="pointer-events-none absolute inset-x-0 top-0 flex items-start justify-between p-5 text-[10px] font-mono tabular uppercase tracking-[0.18em] text-muted-foreground md:p-6">
-        <span>PB-{COMPANY.foundedYear}</span>
+        <span>Pain Bras</span>
         <span>SP / BR</span>
       </div>
     </div>

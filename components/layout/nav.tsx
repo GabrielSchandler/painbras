@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { ArrowUpRight, Menu, X } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -37,7 +38,7 @@ export function Nav() {
             aria-label="Pain Bras — home"
           >
             <Logo />
-            <span className="hidden text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground sm:inline">
+            <span className="ml-3 hidden border-l border-border pl-3 text-[10px] font-medium uppercase tracking-[0.18em] text-muted-foreground md:inline">
               Painéis elétricos industriais
             </span>
           </Link>
@@ -76,7 +77,7 @@ export function Nav() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Falar com engenheiro
+                Falar no WhatsApp
                 <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
               </a>
             </Button>
@@ -99,13 +100,21 @@ export function Nav() {
 
 function Logo() {
   return (
-    <span
-      aria-hidden
-      className="flex items-baseline font-display text-2xl font-semibold tracking-tight text-foreground"
-    >
-      Pain
-      <span className="ml-0.5 text-accent">Bras</span>
-      <span className="ml-1 text-muted-foreground/70">.</span>
+    <span className="flex items-center gap-2.5">
+      <Image
+        src="/brand/logo-icon.svg"
+        alt=""
+        width={36}
+        height={36}
+        priority
+        className="h-9 w-9"
+      />
+      <span
+        aria-hidden
+        className="flex items-baseline font-display text-xl font-semibold tracking-tight text-foreground sm:text-2xl"
+      >
+        Pain<span className="text-foreground">Bras</span>
+      </span>
     </span>
   );
 }
@@ -123,9 +132,7 @@ function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
       aria-hidden={!open}
     >
       <div className="flex h-20 items-center justify-between px-6 sm:px-8">
-        <span className="font-display text-2xl font-semibold tracking-tight">
-          Pain<span className="text-accent">Bras</span>
-        </span>
+        <Logo />
         <button
           type="button"
           onClick={onClose}
@@ -168,7 +175,7 @@ function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Falar com engenheiro
+              Falar no WhatsApp
               <ArrowUpRight className="h-4 w-4" />
             </a>
           </Button>

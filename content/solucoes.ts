@@ -44,10 +44,10 @@ export const SOLUCOES: Solucao[] = [
     descricaoCurta:
       "Painéis com CLP, inversor de frequência e supervisório para controle de processos contínuos em plásticos, borracha e infraestrutura.",
     descricaoLonga:
-      "Integramos CLPs Siemens, WEG e Schneider a inversores de frequência e IHMs para automação de extrusoras, misturadores e sistemas de recalque. Programação documentada e backup entregue ao cliente.",
+      "Integramos CLPs e inversores de frequência a IHMs para automação de extrusoras, misturadores e sistemas de recalque. Programação documentada e backup entregue ao cliente.",
     bullets: [
-      "Inversores de frequência WEG CFW e Schneider Altivar",
-      "CLPs Siemens S7-1200 / S7-1500 e LOGO!",
+      "Inversores de frequência WEG CFW e equivalentes",
+      "CLPs de linhas consolidadas com suporte nacional",
       "IHM com telas customizadas por processo",
       "Comunicação Modbus, Profinet e Ethernet/IP",
     ],

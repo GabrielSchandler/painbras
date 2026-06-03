@@ -29,7 +29,7 @@ export const PROCESSO: EtapaProcesso[] = [
     numero: "03",
     titulo: "Montagem em bancada",
     descricao:
-      "Montagem em oficina controlada por engenheiro responsável. Acabamento, identificação e canalização conforme padrão entregue.",
+      "Montagem em oficina própria com supervisão técnica. Acabamento, identificação e canalização conforme padrão entregue.",
     entregaveis: ["Montagem mecânica", "Cabeamento e identificação", "Documentação de processo"],
   },
   {

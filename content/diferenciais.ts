@@ -25,9 +25,9 @@ export const DIFERENCIAIS: Diferencial[] = [
   },
   {
     numero: "02",
-    titulo: "Componentes WEG, Siemens e Schneider",
+    titulo: "Componentes de fabricantes consolidados",
     descricao:
-      "Trabalhamos exclusivamente com fabricantes consolidados e linhas com peças de reposição disponíveis. Sem genéricos sem garantia.",
+      "Trabalhamos com WEG, Metaltex, COEL, Clamper e outras linhas com peças de reposição garantidas. Sem genéricos sem suporte técnico.",
     Icon: ShieldCheck,
   },
   {
@@ -48,7 +48,7 @@ export const DIFERENCIAIS: Diferencial[] = [
     numero: "05",
     titulo: "Suporte técnico contínuo",
     descricao:
-      "Cliente atendido por engenheiro responsável — não por SAC genérico. Resposta técnica em até 4h úteis.",
+      "Cliente atendido pelo responsável técnico — não por SAC genérico. Resposta em até 4h úteis.",
     Icon: Headset,
   },
   {

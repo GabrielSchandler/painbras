@@ -5,7 +5,7 @@ import { SITE } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "Contato técnico",
   description:
-    "Fale com um engenheiro responsável. Resposta técnica em até 4h úteis. Diagnóstico inicial sem compromisso de orçamento.",
+    "Fale com a nossa equipe técnica. Resposta em até 4h úteis. Diagnóstico inicial sem compromisso de orçamento.",
   alternates: { canonical: `${SITE.url}/contato` },
 };
 

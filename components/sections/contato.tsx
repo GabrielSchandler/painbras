@@ -31,7 +31,7 @@ export function Contato() {
           </Reveal>
           <Reveal delay={0.15}>
             <p className="max-w-md text-base leading-relaxed text-muted-foreground md:text-lg md:leading-relaxed lg:justify-self-end">
-              Engenheiro responsável responde em até 4h úteis com próximas etapas. Quanto
+              Nossa equipe técnica responde em até 4h úteis com próximas etapas. Quanto
               mais técnico você for no formulário, mais preciso é o retorno.
             </p>
           </Reveal>
@@ -67,7 +67,7 @@ export function Contato() {
                   </span>
                 </a>
                 <p className="mt-2 text-sm text-muted-foreground">
-                  WhatsApp atendido por engenheiro responsável.
+                  WhatsApp atendido diretamente pelo responsável técnico.
                 </p>
               </div>
             </Reveal>

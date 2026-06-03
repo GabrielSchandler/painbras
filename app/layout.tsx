@@ -103,6 +103,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
+  icons: {
+    icon: [
+      { url: "/brand/logo-icon.svg", type: "image/svg+xml" },
+    ],
+    apple: [
+      { url: "/brand/logo-icon.svg" },
+    ],
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

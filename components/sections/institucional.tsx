@@ -14,7 +14,7 @@ const pillars = [
   },
   {
     label: "Componentes consolidados",
-    desc: "WEG, Siemens, Schneider e Phoenix Contact. Linhas com peças de reposição garantidas e suporte técnico de fábrica.",
+    desc: "Trabalhamos com WEG, Metaltex, COEL, Clamper e outras linhas com peças de reposição garantidas no mercado nacional.",
   },
 ];
 
@@ -46,8 +46,7 @@ export function Institucional() {
             <Reveal delay={0.1}>
               <p className="text-lg leading-relaxed text-foreground/85 text-pretty md:text-xl md:leading-relaxed">
                 A <strong className="font-medium text-foreground">{COMPANY.shortName}</strong>{" "}
-                é uma fabricante de painéis elétricos industriais fundada em{" "}
-                <span className="font-mono tabular">{COMPANY.foundedYear}</span>, em São Paulo.
+                é uma fabricante de painéis elétricos industriais sediada em São Paulo.
                 Projetamos, montamos e comissionamos painéis sob medida para indústrias e
                 infraestruturas onde uma parada não programada significa prejuízo imediato.
               </p>

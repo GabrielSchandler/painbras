@@ -15,14 +15,14 @@ export default function NotFound() {
           </h1>
           <p className="mt-6 text-lg leading-relaxed text-muted-foreground md:text-xl">
             O endereço solicitado não existe ou foi movido. Volte para a home ou fale
-            direto com um engenheiro pelo WhatsApp.
+            direto com a gente pelo WhatsApp.
           </p>
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
             <Button asChild variant="primary" size="lg">
               <Link href="/">Voltar para a home</Link>
             </Button>
             <Button asChild variant="outline" size="lg">
-              <Link href="/#contato">Falar com engenheiro</Link>
+              <Link href="/#contato">Falar conosco</Link>
             </Button>
           </div>
         </div>
