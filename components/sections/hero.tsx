@@ -2,6 +2,7 @@
 
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { ArrowDown, ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
 import { Button } from "@/components/ui/button";
@@ -11,7 +12,7 @@ import { whatsappLink } from "@/lib/utils";
 
 const headline = ["Painéis", "elétricos", "para indústrias", "que não", "podem parar."];
 
-const eyebrow = "Engenharia elétrica industrial — desde {{ANO_FUNDACAO}}".replace(
+const eyebrow = "Painéis elétricos industriais — desde {{ANO_FUNDACAO}}".replace(
   "{{ANO_FUNDACAO}}",
   COMPANY.foundedYear,
 );
@@ -79,9 +80,8 @@ export function Hero() {
               className="mt-10 max-w-xl text-lg leading-relaxed text-muted-foreground text-pretty md:text-xl md:leading-relaxed"
             >
               Projeto, montagem e comissionamento de painéis elétricos sob medida
-              para plásticos, borracha, irrigação e infraestrutura crítica.
-              Engenharia documentada, componentes WEG, Siemens e Schneider, prazo
-              honesto.
+              para plásticos, borracha, irrigação e infraestrutura crítica. Execução
+              documentada, componentes WEG, Siemens e Schneider, prazo honesto.
             </motion.p>
 
             {/* CTAs */}
@@ -174,76 +174,35 @@ function Stat({ label, value, suffix }: { label: string; value: string; suffix?:
   );
 }
 
-/**
- * Visual editorial — composição abstrata representando painel elétrico.
- * Substituir por <Image> real quando houver foto da oficina.
- */
 function HeroVisual() {
   return (
-    <div className="relative h-full w-full bg-[hsl(220_14%_7%)]">
-      {/* Grid técnico de fundo */}
-      <svg
-        className="absolute inset-0 h-full w-full opacity-[0.08]"
-        xmlns="http://www.w3.org/2000/svg"
-        aria-hidden
-      >
-        <defs>
-          <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
-            <path d="M 32 0 L 0 0 0 32" fill="none" stroke="white" strokeWidth="0.5" />
-          </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill="url(#grid)" />
-      </svg>
+    <div className="relative h-full w-full bg-[hsl(220_14%_94%)]">
+      <Image
+        src="/paineis/painel-incendio-vermelho.jpg"
+        alt="Painel elétrico industrial Pain Bras — sistema de comando para bombas de incêndio"
+        fill
+        priority
+        sizes="(max-width: 1024px) 100vw, 50vw"
+        className="object-contain object-center mix-blend-multiply"
+      />
 
-      {/* Composição de "barramento" abstrato */}
-      <div className="absolute inset-0 flex flex-col justify-between p-8 md:p-12">
-        <div className="flex items-start justify-between text-[10px] font-mono tabular uppercase tracking-[0.18em] text-white/50">
-          <span>PB-{COMPANY.foundedYear}</span>
-          <span>SP / BR</span>
+      {/* Overlay técnico — info bar bottom */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-end justify-between border-t border-foreground/10 bg-background/85 p-5 backdrop-blur-sm md:p-6">
+        <div className="text-[10px] font-mono tabular uppercase tracking-[0.18em] text-muted-foreground">
+          <p>Conformidade</p>
+          <p className="mt-1 text-foreground/80">NR-10 • NR-12 • NBR IEC 60439</p>
         </div>
-
-        {/* Barras verticais simulando barramento */}
-        <div className="flex flex-1 items-end gap-2 py-8">
-          {Array.from({ length: 14 }).map((_, i) => (
-            <motion.span
-              key={i}
-              initial={{ scaleY: 0, opacity: 0 }}
-              animate={{
-                scaleY: 1,
-                opacity: 0.4 + ((i % 4) * 0.15),
-              }}
-              transition={{
-                duration: 1.2,
-                ease: [0.16, 1, 0.3, 1],
-                delay: 0.6 + i * 0.04,
-              }}
-              style={{
-                transformOrigin: "bottom",
-                height: `${30 + ((i * 13) % 60)}%`,
-              }}
-              className="flex-1 bg-white/60"
-              aria-hidden
-            />
-          ))}
-        </div>
-
-        <div className="flex items-end justify-between text-[10px] font-mono tabular text-white/50">
-          <div>
-            <p className="uppercase tracking-[0.18em]">Conformidade</p>
-            <p className="mt-1 text-white/80">NR-10 • NR-12 • NBR IEC 60439</p>
-          </div>
-          <div className="text-right">
-            <p className="uppercase tracking-[0.18em]">Ciclo</p>
-            <p className="mt-1 text-white/80">Projeto → Ensaio → Comissionamento</p>
-          </div>
+        <div className="text-right text-[10px] font-mono tabular uppercase tracking-[0.18em] text-muted-foreground">
+          <p>Ciclo</p>
+          <p className="mt-1 text-foreground/80">Projeto → Ensaio → Comissionamento</p>
         </div>
       </div>
 
-      {/* Highlight diagonal */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10"
-      />
+      {/* Tag superior */}
+      <div className="pointer-events-none absolute inset-x-0 top-0 flex items-start justify-between p-5 text-[10px] font-mono tabular uppercase tracking-[0.18em] text-muted-foreground md:p-6">
+        <span>PB-{COMPANY.foundedYear}</span>
+        <span>SP / BR</span>
+      </div>
     </div>
   );
 }

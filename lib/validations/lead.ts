@@ -57,7 +57,7 @@ export const leadSchema = z.object({
 export type LeadInput = z.infer<typeof leadSchema>;
 
 export const CARGO_OPTIONS = [
-  { value: "engenharia", label: "Engenharia / Projetos" },
+  { value: "engenharia", label: "Técnico / Projetos" },
   { value: "manutencao", label: "Manutenção / Operação" },
   { value: "compras", label: "Compras / Suprimentos" },
   { value: "diretoria", label: "Diretoria / Gestão" },

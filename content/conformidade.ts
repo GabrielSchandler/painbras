@@ -46,13 +46,15 @@ export const NORMAS: Norma[] = [
 export type Componente = {
   nome: string;
   categoria: string;
+  logo: string;
 };
 
 export const COMPONENTES_FABRICANTES: Componente[] = [
-  { nome: "WEG", categoria: "Motores, inversores, soft-starters" },
-  { nome: "Siemens", categoria: "CLP, inversores, sinalização" },
-  { nome: "Schneider Electric", categoria: "Disjuntores, contatores, IHM" },
-  { nome: "ABB", categoria: "Proteção, controle, automação" },
-  { nome: "Rockwell Allen-Bradley", categoria: "CLP, IHM, drives" },
-  { nome: "Phoenix Contact", categoria: "Bornes, conectores, fontes" },
+  { nome: "WEG", categoria: "Motores, inversores, soft-starters", logo: "/logos/weg.png" },
+  { nome: "Metaltex", categoria: "Relés, temporizadores, conectores", logo: "/logos/metaltex.png" },
+  { nome: "COEL", categoria: "Controladores e instrumentação", logo: "/logos/coel.png" },
+  { nome: "Digimec", categoria: "Chaves, comutadoras, fim de curso", logo: "/logos/digimec.png" },
+  { nome: "Clamper", categoria: "Proteção contra surtos (DPS)", logo: "/logos/clamper.png" },
+  { nome: "Ascael", categoria: "Componentes elétricos industriais", logo: "/logos/ascael.png" },
+  { nome: "Salomão", categoria: "Eletrônica e instrumentação", logo: "/logos/salomao.png" },
 ];

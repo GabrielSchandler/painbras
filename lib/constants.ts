@@ -5,7 +5,7 @@
 export const COMPANY = {
   legalName: "Pain Bras Painéis Elétricos Industriais",
   shortName: "Pain Bras",
-  tagline: "Engenharia elétrica industrial sob medida",
+  tagline: "Painéis elétricos industriais sob medida",
   description:
     "Projetamos, montamos e comissionamos painéis elétricos industriais para indústrias que não podem parar — plásticos, borracha, irrigação e infraestrutura.",
   foundedYear: "{{ANO_FUNDACAO}}", // ex: "2008"
@@ -52,13 +52,13 @@ export const SITE = {
   name: "Pain Bras",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.painbras.com.br",
   locale: "pt_BR",
-  defaultMetaTitle: "Pain Bras — Engenharia em painéis elétricos industriais",
+  defaultMetaTitle: "Pain Bras — Painéis elétricos industriais sob medida",
   defaultMetaDescription:
     "Projetamos, montamos e comissionamos painéis elétricos industriais sob medida para indústrias que não podem parar. Plásticos, borracha, irrigação e infraestrutura.",
 } as const;
 
 export const NAV = [
-  { label: "Engenharia", href: "/#engenharia" },
+  { label: "Processo", href: "/#processo" },
   { label: "Soluções", href: "/#solucoes" },
   { label: "Segmentos", href: "/#segmentos" },
   { label: "Projetos", href: "/#projetos" },
@@ -67,4 +67,4 @@ export const NAV = [
 ] as const;
 
 export const WHATSAPP_DEFAULT_MESSAGE =
-  "Olá, vim pelo site da Pain Bras e gostaria de falar com um engenheiro sobre um projeto.";
+  "Olá, vim pelo site da Pain Bras e gostaria de falar sobre um projeto de painel elétrico.";

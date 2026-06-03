@@ -74,7 +74,7 @@ export const metadata: Metadata = {
         url: "/og/default.jpg",
         width: 1200,
         height: 630,
-        alt: `${COMPANY.shortName} — Engenharia elétrica industrial`,
+        alt: `${COMPANY.shortName} — Painéis elétricos industriais`,
       },
     ],
   },

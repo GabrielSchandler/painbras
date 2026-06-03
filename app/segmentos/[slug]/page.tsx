@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const seg = SEGMENTOS.find((s) => s.slug === slug);
   if (!seg) return {};
   return {
-    title: `${seg.titulo} — Engenharia elétrica`,
+    title: `${seg.titulo} — Painéis elétricos`,
     description: seg.resumo,
     alternates: { canonical: `${SITE.url}/segmentos/${seg.slug}` },
     openGraph: {

@@ -5,7 +5,7 @@ import { COMPANY } from "@/lib/constants";
 
 const pillars = [
   {
-    label: "Engenharia documentada",
+    label: "Execução documentada",
     desc: "Cada painel sai com diagrama as-built, prontuário NR-10, lista técnica e laudo de ensaios. Documentação que sobrevive a auditoria e troca de equipe.",
   },
   {
@@ -46,11 +46,10 @@ export function Institucional() {
             <Reveal delay={0.1}>
               <p className="text-lg leading-relaxed text-foreground/85 text-pretty md:text-xl md:leading-relaxed">
                 A <strong className="font-medium text-foreground">{COMPANY.shortName}</strong>{" "}
-                é uma empresa de engenharia elétrica industrial fundada em{" "}
+                é uma fabricante de painéis elétricos industriais fundada em{" "}
                 <span className="font-mono tabular">{COMPANY.foundedYear}</span>, em São Paulo.
-                Projetamos, montamos e comissionamos painéis elétricos sob medida para
-                indústrias e infraestruturas onde uma parada não programada significa prejuízo
-                imediato.
+                Projetamos, montamos e comissionamos painéis sob medida para indústrias e
+                infraestruturas onde uma parada não programada significa prejuízo imediato.
               </p>
             </Reveal>
 

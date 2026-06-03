@@ -6,8 +6,8 @@ import { PROCESSO } from "@/content/processo";
 export function Engenharia() {
   return (
     <section
-      id="engenharia"
-      aria-labelledby="engenharia-heading"
+      id="processo"
+      aria-labelledby="processo-heading"
       className="relative bg-surface-elevated section-pad-lg"
     >
       <Container size="wide">
@@ -20,7 +20,7 @@ export function Engenharia() {
               as="h2"
               title={
                 <>
-                  Engenharia em cinco etapas.<br />
+                  Cinco etapas, sem atalho.<br />
                   <span className="text-muted-foreground">Nada começa sem a anterior.</span>
                 </>
               }

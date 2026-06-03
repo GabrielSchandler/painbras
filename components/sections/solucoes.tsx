@@ -25,7 +25,7 @@ export function Solucoes() {
               title={
                 <>
                   Quatro categorias.<br />
-                  <span className="text-muted-foreground">Uma única engenharia.</span>
+                  <span className="text-muted-foreground">Uma única bancada.</span>
                 </>
               }
             />

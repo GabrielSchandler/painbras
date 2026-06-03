@@ -20,7 +20,7 @@ export function Conformidade() {
               as="h2"
               title={
                 <>
-                  Engenharia que<br />
+                  Painel que<br />
                   <span className="text-muted-foreground">passa em auditoria.</span>
                 </>
               }

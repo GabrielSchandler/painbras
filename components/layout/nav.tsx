@@ -38,7 +38,7 @@ export function Nav() {
           >
             <Logo />
             <span className="hidden text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground sm:inline">
-              Engenharia elétrica industrial
+              Painéis elétricos industriais
             </span>
           </Link>
 

@@ -1,6 +1,7 @@
 "use client";
 
 import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 import { Container } from "@/components/ui/container";
 import { Reveal, RevealStagger, RevealItem } from "@/components/primitives/reveal";
 import { SectionHeading } from "@/components/primitives/section-heading";
@@ -41,9 +42,14 @@ export function Projetos() {
           {PROJETOS.map((p) => (
             <RevealItem key={p.slug}>
               <article className="group relative flex h-full flex-col gap-8 bg-surface-elevated p-8 transition-colors duration-500 hover:bg-background md:p-10 lg:gap-10 lg:p-12">
-                {/* Image placeholder com aspecto cinematográfico */}
-                <div className="relative aspect-[5/4] w-full overflow-hidden border border-border bg-[hsl(220_14%_10%)]">
-                  <ProjectVisual segmento={p.segmento} />
+                <div className="relative aspect-[5/4] w-full overflow-hidden border border-border bg-[hsl(220_14%_96%)]">
+                  <Image
+                    src={p.imagem}
+                    alt={p.imagemAlt}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-contain p-4 mix-blend-multiply transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                  />
                 </div>
 
                 <div className="flex-1">
@@ -100,42 +106,3 @@ export function Projetos() {
   );
 }
 
-/**
- * Visual placeholder — composição abstrata identificada por segmento.
- * Substituir por <Image> com foto real do projeto.
- */
-function ProjectVisual({ segmento }: { segmento: string }) {
-  return (
-    <div className="relative h-full w-full">
-      <svg
-        className="absolute inset-0 h-full w-full opacity-[0.12]"
-        xmlns="http://www.w3.org/2000/svg"
-        aria-hidden
-      >
-        <defs>
-          <pattern id={`grid-${segmento}`} width="20" height="20" patternUnits="userSpaceOnUse">
-            <path d="M 20 0 L 0 0 0 20" fill="none" stroke="white" strokeWidth="0.5" />
-          </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill={`url(#grid-${segmento})`} />
-      </svg>
-
-      <div className="absolute inset-0 flex flex-col justify-between p-6">
-        <div className="flex items-start justify-between text-[10px] font-mono tabular uppercase tracking-[0.18em] text-white/60">
-          <span>PB</span>
-          <span>{segmento}</span>
-        </div>
-        <div className="flex items-end gap-1.5">
-          {Array.from({ length: 8 }).map((_, i) => (
-            <span
-              key={i}
-              style={{ height: `${20 + ((i * 11) % 55)}%` }}
-              className="flex-1 bg-white/50"
-              aria-hidden
-            />
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
