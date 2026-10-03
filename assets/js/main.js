@@ -16,13 +16,16 @@
   $('#ano').textContent = new Date().getFullYear();
 
   /* Header, barra de progresso e barra fixa do celular */
-  const header = $('.header'), prog = $('.progress span'), bar = $('.bar'), hero = $('.hero');
+  const header = $('.header'), prog = $('.progress span'), bar = $('.bar'), fab = $('.fab'), hero = $('.hero'), cta = $('.cta__band');
   let ticking = false;
   const onScroll = () => {
     const y = scrollY, max = document.documentElement.scrollHeight - innerHeight;
     header.classList.toggle('is-stuck', y > 20);
     prog.style.setProperty('--p', max > 0 ? y / max : 0);
-    bar.classList.toggle('is-on', y > hero.offsetHeight * 0.6);
+    /* o botão fixo some no topo e em cima da faixa amarela, onde já existe um botão igual */
+    const r = cta.getBoundingClientRect(), onCta = r.top < innerHeight * 0.75 && r.bottom > innerHeight * 0.4;
+    bar.classList.toggle('is-on', y > hero.offsetHeight * 0.55 && !onCta);
+    fab.classList.toggle('is-off', onCta);
     ticking = false;
   };
   addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
@@ -33,6 +36,13 @@
     if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
   }), { threshold: 0.14, rootMargin: '0px 0px -6% 0px' });
   $$('[data-reveal]').forEach(el => io.observe(el));
+
+  /* Menu: marca a seção que está na tela */
+  const links = $$('.nav a');
+  const spy = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) links.forEach(a => a.classList.toggle('is-on', a.hash === '#' + e.target.id));
+  }), { rootMargin: '-45% 0px -50% 0px' });
+  links.forEach(a => { const s = $(a.hash); if (s) spy.observe(s); });
 
   /* Imagens de fundo opcionais: só aparecem se o arquivo existir */
   $$('[data-bg]').forEach(el => {
@@ -84,8 +94,6 @@
       btns.forEach((b, k) => { b.classList.toggle('is-active', k === cur); b.setAttribute('aria-selected', k === cur); });
       panes.forEach((p, k) => p.classList.toggle('is-active', k === cur));
       if (user) pick.classList.remove('is-auto');
-      const b = btns[cur], list = b.parentElement;
-      if (list.scrollWidth > list.clientWidth) list.scrollTo({ left: b.offsetLeft - (list.clientWidth - b.offsetWidth) / 2, behavior: 'smooth' });
     };
     btns.forEach((b, i) => {
       b.addEventListener('click', () => go(i, true));
@@ -102,6 +110,7 @@
 
   /* Segmentos (sanfona) */
   const segs = $$('.seg');
+  segs.forEach(s => s.insertAdjacentHTML('beforeend', `<svg class="seg__wm" aria-hidden="true"><use href="${$('.seg__top use', s).getAttribute('href')}"/></svg>`));
   const openSeg = s => segs.forEach(x => x.classList.toggle('is-active', x === s));
   segs.forEach(s => {
     if (fine) s.addEventListener('pointerenter', () => openSeg(s));
