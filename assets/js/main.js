@@ -1,6 +1,6 @@
 (() => {
   const WA = '5511964807702';
-  const WA_MSG = 'Olá! Vim pelo site e quero um orçamento de painel elétrico.';
+  const WA_MSG = 'Olá! Vim pelo site e gostaria de um orçamento de painel elétrico.';
   const $ = (s, el = document) => el.querySelector(s);
   const $$ = (s, el = document) => [...el.querySelectorAll(s)];
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;

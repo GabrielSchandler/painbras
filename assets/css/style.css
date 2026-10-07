@@ -325,7 +325,8 @@ h2{font-weight:900;font-stretch:120%;text-transform:uppercase;font-size:clamp(1.
   .pane__img img{max-height:220px}
   .pane__lead{font-size:1.08rem;margin-top:10px}
   .pills{margin:16px 0 20px}
-  .pane .btn{width:100%}
+  .pane__txt{min-width:0}
+  .pane .btn{width:100%;font-size:.98rem;gap:9px;padding-right:16px}
 
   .segs{flex-direction:column;height:auto;gap:8px}
   .seg{flex:none;padding:18px 18px 18px 84px;min-height:76px;justify-content:center;border-radius:18px}
@@ -351,6 +352,7 @@ h2{font-weight:900;font-stretch:120%;text-transform:uppercase;font-size:clamp(1.
   .social{flex-direction:column;text-align:center;margin-top:30px;gap:12px;padding:20px}
 
   .cta__in{flex-direction:column;align-items:flex-start;gap:22px}
+  .cta h2{font-size:clamp(1.9rem,9.6vw,2.7rem)}
   .cta__side,.cta__side .btn{width:100%}
   .contacts{grid-template-columns:1fr;gap:8px;padding:28px 0 36px}
   .contact,.contact--wide{display:grid;grid-template-columns:auto 1fr;column-gap:16px;align-items:center;padding:14px 18px;border-radius:16px}
@@ -363,6 +365,7 @@ h2{font-weight:900;font-stretch:120%;text-transform:uppercase;font-size:clamp(1.
   .bar.is-on{transform:none}
 }
 @media (max-width:420px){
+  .pane{padding:20px 16px 22px}
   .header__in .btn span{display:none}
   .header__in .btn{width:44px;padding:0;font-size:1.2rem}
 }
